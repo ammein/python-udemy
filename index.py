@@ -227,3 +227,24 @@ has state (it starts by pointing at the "c" in "classic text")
 has a next() method and an __iter__() method
 """
 iter_sentence = iter(sentence)
+# Run next(iter_sentence) on terminal over and over again to see iterator on sentence
+
+#LIST
+#append
+a = [1,2,3]
+a.append(4)
+#extend (Adding from another list)
+b = [1,2,3,4]
+b.extend(a)
+
+#insert (Insert on (index , object))
+b.insert(3 , 1002)
+
+#remove (if remove cannot find the value , it will return an error)
+b.remove(1)
+
+#pop(By default no parameter , it will pop the last in. If value index insert , it will pop on the certain index)
+b.pop()
+
+#clear(To remove all item in the list)
+b.clear()
