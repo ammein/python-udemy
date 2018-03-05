@@ -278,3 +278,72 @@ base_deep_copy[1] = 1e44
 
 #To perform copy on certain index
 base_deep_copy[3][1] = 2.4e43
+
+# Using lists as a Stack
+lifo = list(range(2,6))
+
+lifo.append(3.14)
+lifo.pop()
+
+#Using Lists as Queues
+#To implement a queue , use collections.deque which was designed to have fast appends and pops from both ends
+from collections import deque
+
+name_list = ['John' , 'Michael' , 'Bruce' , 'Abby']
+fifo = deque(name_list)
+
+fifo.popleft()
+
+#List Comprehensions
+# A concise way to create lists.
+
+#METHOD 1
+cubes = []
+for n in range(0,10):
+    cubes.append(n*n*n)
+
+#METHOD 2
+#map = 
+cubes = list(map(lambda x: x*x*x, range(10)))
+
+#METHOD 3
+cubes = [x*x*x for x in range(0,10)]
+
+#For Loop vs List Comprehension
+combs = []
+class_1 = ['Jimmy' , 'Audrey' , 'Ono']
+
+for stud_1 in class_1:
+    for stud_2 in class_1:
+        if stud_1 != stud_2:
+            combs.append((stud_1 , stud_2)) #Append multiple arg technique, Use double bracket
+
+x_train = list(range(-4 , 8 , 2)) #from -4 until 8 increment of 2
+
+#Doubling the number
+[x**2 for x in x_train]
+
+#Applying absolute to all the elements
+[abs(x) for x in x_train]
+
+y_train = ['American Bulldog  ' , 'Berger Picard,' , 'Bullmastiff' , 'Collie' , 'Harrier']
+
+#To remove empty spaces
+[y.strip() for y in y_train]
+
+#To remove comma
+[y.strip(",") for y in y_train]
+
+#Do Both
+[y.strip().strip(",").upper() for y in y_train]
+
+#Unpacked technique from multiple lists
+unpacked = []
+list_in_list = [['Javanese' , 'Egyptian Mau' , 'Persian'],['Sphynx' , 'Scottish Fold' , 'Manx'],['Korat' , 'Burmese' , 'Bengal']]
+
+for num in list_in_list:
+    for n in num:
+        unpacked.append(n)
+
+#Shortcut Method
+[n for num in list_in_list for n in num]
