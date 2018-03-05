@@ -204,7 +204,7 @@ def coding_style():
     """
     pass
 
-# For documention , open url
+# For documention degression , open url
 import webbrowser
 url = 'https://stackoverflow.com/questions/9884132/what-exactly-are-pythons-iterator-iterable-and-iteration-protocols'
 def degression_link():
@@ -248,3 +248,33 @@ b.pop()
 
 #clear(To remove all item in the list)
 b.clear()
+
+#Find index number of '3'
+b.index(4)
+
+#count number for the value
+b.count(3)
+
+#sort (Accending Order)
+b.sort()
+
+#Sort Reverse
+b.sort(reverse=True)
+
+#Reverse (NOT SORT . It just reverse your list)
+b.reverse()
+
+#copy
+base_eg = [3,4,5,[7. , 5.]]
+base_assignment = base_eg
+base_assignment[1] = 0.4
+base_shallow_copy = base_eg.copy()
+base_shallow_copy[1] = 3991 #useful to assign other var with same data but different on each var
+
+#This is to perform deep copy . Use This for import other files or etc
+from copy import deepcopy
+base_deep_copy = deepcopy(base_eg)
+base_deep_copy[1] = 1e44
+
+#To perform copy on certain index
+base_deep_copy[3][1] = 2.4e43
