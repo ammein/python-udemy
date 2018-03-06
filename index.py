@@ -269,7 +269,7 @@ base_eg = [3,4,5,[7. , 5.]]
 base_assignment = base_eg
 base_assignment[1] = 0.4
 base_shallow_copy = base_eg.copy()
-base_shallow_copy[1] = 3991 #useful to assign other var with same data but different on each var
+base_shallow_copy[1] = 3991 #useful to a]ssign other var with same data but different on each var
 
 #This is to perform deep copy . Use This for import other files or etc
 from copy import deepcopy
@@ -278,3 +278,30 @@ base_deep_copy[1] = 1e44
 
 #To perform copy on certain index
 base_deep_copy[3][1] = 2.4e43
+
+
+#Nested List Comprehension
+def matrix():
+    lala = """
+    NOTE :
+    Running Row in matrix
+    row[i] = 0
+    """
+    matrix = [
+        [1,2,3,4],
+        [5,6,7,8],
+        [9,10,11,12]
+    ]
+    matrix_expand = [[row[i] for row in matrix] for i in range(4)]
+    return {print("Normal Matrix = " , matrix),print("Expand Matrix = " , matrix_expand),print(lala)}
+
+#In the real world , you should prefer built-in functions to complex flow statements. The zip() function would do a great job for this use case :'
+def real_world():
+    matrix = [
+            [1,2,3,4],
+            [5,6,7,8],
+            [9,10,11,12]
+        ]
+    tuples = print("\t*matrix = ",list(zip(*matrix)))
+    wtuples = print("\tmatrix = " ,list(zip(matrix)))
+    return tuples , wtuples
