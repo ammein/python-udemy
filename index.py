@@ -9,6 +9,12 @@ Use this in your python terminal -> degression_link()
 
 Run Python NOTE :
 Use default terminal to run python code -> python filename.py
+
+Tuple NOTE :
+Use python terminal -> print(what_is_tuple.__doc__)
+
+SETS NOTE :
+Use python terminal -> print(what_is_sets.__doc__)
 """
 # IF Statement
 
@@ -348,8 +354,6 @@ for num in list_in_list:
 #Shortcut Method
 [n for num in list_in_list for n in num]
 
-
-
 #Nested List Comprehension
 def matrix():
     lala = """
@@ -375,3 +379,103 @@ def real_world():
     tuples = print("\t*matrix = ",list(zip(*matrix)))
     wtuples = print("\tmatrix = " ,list(zip(matrix)))
     return tuples , wtuples
+
+
+#del statement (delete)
+cats_list = ['Javanese' , 'Egyptian Mau' , 'Persian' , 'Sphynx' , 'Scottish Fold' , 'Manx']
+
+del cats_list[2]
+#to delete all including var
+del cats_list
+
+
+#Tuples and Sequences
+#Try below ! Its also tuple ! Shit !
+t = 12.54 , 33.33 , 'Blood Moon !'
+type(t)
+
+t[0]
+
+#Tuples may be nested
+u = t , (1,2,3,4,5)
+#Tuples are immutable (Means you cannot change the value of much like string)
+t[0] = 2012
+
+# but they can contain mutable objects:
+v = ([2,3,4],[6,7,8])
+
+def what_is_tuple():
+    """
+    An OUTPUT TUPLES are always enclosed in parentheses, so that nested tuples are interpreted correctly;
+
+    Though tuples may seem similar to lists, they are often used in different situations and for different purposes.
+    \t- Tuples are immutable
+    \t- Tuples usually contain a heterogenous sequence of elements that are accessed via unpacking or indexing
+    \t- Lists are mutable, and their elements are usually homogeneous and are accessed by iterating over the list.
+
+    -----------------------------
+    \tPROBLEM
+    -----------------------------
+    CANNOT CONTAIN ONE SINGLE ITEM , IT WILL READ AS FLOAT or STR
+    """
+    pass
+
+#Empty tuple
+empty_t = ()
+#if you do only one items/arg , it is NOT a TUPLE
+# Try type(failed_single_t)
+failed_single_t = ('something')
+failed_single_t2 = (12.66)
+
+#But IF comma ADDED
+# Try type(single_t)
+single_t = (12.66,)
+
+#UNPACKING TECHNIQUE from TUPLE
+"""
+This is called sequence unpacking and works for any sequence on the right-hand-side.
+
+Sequence unpacking requires that there are as many variables on the left side of the equals sign as there are elements in the sequence. Note that multiple assignments is really just a combination of tuple packing and sequnce unpacking.
+"""
+x , y , z = t
+
+
+
+
+#Sets
+def what_is_sets():
+    """
+    A sets is an unordered collection with NO DUPLICATE ELEMENTS. Basic uses include membership testing and eliminating duplicate entries.
+    
+    Set objects also support mathematical operations like union, intersection, difference and symmetric difference.
+
+    Curly braces or the set() function can be used to create sets.
+
+    NOTE:
+    to create an empty set , you have to use set() , not {} ; the latter creates an empty dictionary,
+    """
+    pass
+
+shopping_list = ['Macbook' ,'ChromeBook Pixel' , 'Nexus 5X' , 'Nokia N1' , 'Nexus 5X', 'Nexus 5X' ,'Macbook' , 'ChromeBook Pixel']
+
+print("Shopping List = ", shopping_list)
+print("Length of Shopping List = " , len(shopping_list))
+
+shopping_list2 = {'Macbook' ,'ChromeBook Pixel' , 'Nexus 5X' , 'Nokia N1' , 'Nexus 5X', 'Nexus 5X' ,'Macbook' , 'ChromeBook Pixel'}
+
+print("SETS Shopping List = ", shopping_list2)
+print("SETS Length of Shopping List = " , len(shopping_list2))
+
+#CASE SENSITIVE (Notice the MacBook and Macbook)
+'MacBook' in shopping_list
+'Macbook' in shopping_list
+
+#Notice duplicate and run this on python
+x = set('qweertyyuihsdfop')
+y = set('pooiuytrrsdfewqq')
+
+#RUN THIS for SETS
+x - y #Letters in x but not in y
+x | y #Letters in x or y or both
+x & y #letters in both x and y
+x ^ y #Letters in x or y but not both
