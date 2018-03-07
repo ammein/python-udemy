@@ -1,5 +1,8 @@
-"""
-Check File directory using python command -> ls
+r"""
+Check File directory using terminal command -> ls
+
+FIRST NOTE :
+Use python terminal for beautiful list down the var and function -> print(*dir(import_filename) , sep='\n')
 
 NOTE : Watch out for the line space and indent ! Because it will detect an error on your python. Why ? Because it treated all as an object.
 
@@ -23,6 +26,15 @@ use python terminal -> print(what_is_dict.__doc__)
 
 MODULES NOTE :
 use python terminal -> print(modules.__doc__)
+
+OUTPUT FORMATTING NOTE :
+use python terminal -> print(output_formatting.__doc__)
+
+READING & WRITING NOTE :
+use python terminal -> print(reading_writing.__doc__)
+
+READ NOTE :
+use python terminal -> print(read.__doc__)
 """
 # IF Statement
 
@@ -612,6 +624,293 @@ def modules():
 
 print(50 * "*" , "\nLOAD SUCCESSFUL\n" , 50 * "*")
 
+
+#Input & Output
+def output_formatting():
+    """
+    There are two ways format your output ;
+    \t - Do all string handling yourself; using string slicing and concatenation operations you can create any layout you can imagine. The string type has some methods that perform useful operations for padding strings to a given column width; these will be discussed shortly.
+
+    \t - The second way is to use 'formatted string literals', or the 'str.format()' method.
+
+    HOW TO CONVERT VALUE TO STRINGS ?
+    Use -> repr() or str() functions
+    """
+    pass
+
+
+s = 'Hello World'
+str(s) #Expected Output : 'Hello World'
+repr(s) #Expected Output : "'Hello World'" (Double Quote)
+print(repr(s)) #Expected Output : 'Hello World' (Remove Double Qoute)
+
+str(1/7) #Expected Output : '0.14285714285714285' (Coverted into a string)
+
+x = 10 * 3.25
+y = 200 * 200
+s = 'The value of x is ' + repr(x) + ', and y is ' + repr(y) +'. . .'
+
+print(s) #Just like .innerHTML ! 
+#Expected Output : The value of x is 32.5, and y is 40000. . .
+
+#The repr() of a string adds string quotes and backslashes
+hello = 'Hello World\n'
+hellos = repr(hello)
+print(hellos) #Expected Output : 'Hello World\n' (Useful for user guidance !)
+
+#The arg to repr() may be any Python Object
+#A tuple
+repr((x , y , ('Spam' , 'Eggs')))
+
+#Here are two ways to write a table of squares and cubes :
+def table_of_squares():
+    """
+    Expected Output :
+    1 1 1
+    2 4 8
+    3 9 27
+    4 16 64
+    5 25 125
+    6 36 216
+    7 49 343
+    8 64 512
+    9 81 729
+    10 100 1000
+    """
+    for x  in range(1,11):
+        print(x , x*x , x*x*x)
+    return
+
+for x in range(1,11):
+    print(x,x*x,end=' ')
+    #note the use of 'end' on previous line to make a NEW LINE (\n)
+    print(x*x*x)
+    
+def nice_output():
+    """
+    Using repr() and .rjust()
+    rjust() -> Right Justified(value{arg = line of column(1,2,3 and more)})
+
+    EXAMPLE : 
+    for x in range(1,11):
+        print(repr(x).rjust(2), repr(x*x).rjust(3) , end=' ')
+        #Note use of 'end' on previous line
+        print(repr(x * x * x).rjust(4))
+    """
+    for x in range(1,11):
+        print(repr(x).rjust(2), repr(x*x).rjust(3) , end=' ')
+        #Note use of 'end' on previous line
+        print(repr(x * x * x).rjust(4))
+    print("""
+    Using Right Justified Value ! To know more , use .__doc__ on this function
+    """)
+    return
+
+def nice_format():
+    """
+    Python 3 FEATURES :
+    for x in range(1,11):
+        print('{0:2d} {1:3d} {2:4d}' .format(x, x*x , x*x*x))
+
+    2d -> Represents as 2 decimal of SPACES. If the number have more, you may have to check your output again
+    {0:2d} -> 0 means index of your PRINT !
+    {0:10} -> for number of strings in 10 !
+    """
+    for x in range(1,11):
+        print('{0:2d} {1:3d} {2:4d}' .format(x, x*x , x*x*x))
+    print("""
+    To know more about new FORMAT for Python 3 , run .__doc__ on this function.
+    """)
+    return
+
+
+#Basic Usage of str.format()
+def str_format():
+    """
+    The brackets and charactes within them (called format fields) are replaced with the objects passed into the 'str.format()' method. A number in the brackets can be used to refer to the position of the object passed into the str.format() method.
+
+    print('We are the {refer to index in .format} who say "{refer to index in .format}!"'.format('knights' , 'Ni'))
+    """
+    print('\nWe are the {} who say "{}!"'.format('knights' , 'Ni'))
+    print('{0} and {1}'.format('spam' , 'eggs'))
+    print('{1} and {0}'.format('spam', 'eggs'))
+    #If keyword args are used in the str.format() method, their values are referred to by using the name of argument
+    print('This {food} is {adjective}.'.format(food = 'spam' , adjective = 'absolutely horrible'))
+    print('The story of {0}, {1}, and {other}.'.format('Bill' , 'Manfred' , other = 'Georg'))
+    #You can also assign double quote shortcut on index !r
+    contents = 'eels'
+    print('My hovercraft is full of {!r}.'.format(contents))
+    print("""
+    ---------------------------------------
+    FROM :
+    ---------------------------------------
+    print('We are the {} who say "{}!"'.format('knights' , 'Ni'))
+    print('{0} and {1}'.format('spam' , 'eggs'))
+    print('{1} and {0}'.format('spam', 'eggs'))
+    #If keyword args are used in the str.format() method, their values are referred to by using the name of argument
+    print('This {food} is {adjective}.'.format(food = 'spam' , adjective = 'absolutely horrible'))
+    print('The story of {0}, {1}, and {other}.'.format('Bill' , 'Manfred' , other = 'Georg'))
+    #You can also assign double quote shortcut on index !r
+    contents = 'eels'
+    print('My hovercraft is full of {!r}.'.format(contents))
+    """)
+    return
+
+#Reading and Writing Files ! Now the fun begins !
+def reading_writing():
+    """
+    open() returns a file object, and is most commonly used with two args: open(filename, mode)
+
+    f = open('workfile' , 'w')
+    \t - The first arg is a string containing the filename. The second arg is another string containing a few characters describing the way in which the file will be used.
+
+    MODE can be :
+    'r' - when the file will only be read
+    'w' - for only writing(an existing file with the same name will be erased)
+    'a' - opens the file for appending; any data written to the file is automatically added to the end
+    'r+' - opens the file for both reading and writing. The mode arg is optional; 'r' will be assumed it it's omitted.
+    'b' - opens a file in binary mode
+
+    It is GOOD PRACTICE to use 'with' keyword when dealing with file objects. The advantage is that the file is properly closed after its suites finishes.
+
+    with open('workfile') as f:
+        read_data = f.read()
+    f.close()
+    """
+    pass
+
+def read():
+    r"""
+    To read a file's content, call f.read(size), which reads some quantity of data and returns it as string (in text mode) or bytes object (in binary mode). Size is an OPTIONAL NUMERIC arg. When size is omitted or negative, the entire contents of the file will be read and returned; it's your problem if the file is twice as large as your machine's memory. Otherwise, at most size bytes are read and returned. If the end of the file has been reached, f.read() will return an empty string (' ')
+
+    read()
+
+    read_data = []
+    with open('filename') as f:
+        read_data = f.open()
+    f.close()
+
+    ----------------------------------------------------------------------
+    readline()
+    - reads a single line from the file.
+
+    f = open('wine.csv' , r)
+    f.readline()
+
+    -----------------------------------------
+    For reading lines from a file, you can loop over the file object. This is memory efficient, fast and leads to simple code :
+    -----------------------------------------
+
+    file_data = []
+    with open('wine.csv') as f:
+        for line in f:
+            file_data_.append(line.rstrip('\n'))
+    f.closed
+
+
+    ---------------------------------------------------------------------
+    To write the file
+    new_line = '9.99 , 9.99 ,9.99 ,9.99 ,9.99 ,9.99'
+    f = open('test_file.csv' , 'w')
+    f.write(new_line)
+    f.close()
+    #Expected Output : 9.99 , 9.99 ,9.99 ,9.99 ,9.99 ,9.99
+    """
+    pass
+
+def json():
+    """
+    Python allows you to use the popular data interchange format called [JSON](http://json.org/) (Javascript Object Notation). The standard module called json can take Python data heirarchies, and convert them to string representations; this process is called serializing. Reconstructing the data from string representation is called deserializing. Between serializing and deserializing, the string representing the object may have been stored in a file or data, or sent over a network connection to some distant machine.
+
+    If you have an object x, you can view its JSON string representation with a simple line of code
+
+    CODE :
+    import json
+    json.dumps([1 , 'simple' , 'list']) #Expected Output : '[1, "simple" , "list"]'
+
+    dump() -> simply serializes the object to a text file. So if 'f' is a 'text file' object opened for writing , we can do this method :
+
+    json.dump(x , f)
+
+    To decode the object again, if 'f' is a 'text file' object which has been opened for reading : 
+
+    x = json.load(f)
+
+    ---------------------------------------------------------------------
+    pickle module
+    ---------------------------------------------------------------------
+    x_data = json.dumps([1,'simple','list])
+    f = open('json_test_file.csv' , 'w')
+    f.write(x_data)
+    f.close()
+    f = open('json_test_file.csv' , 'r')
+    y = json.load(f)
+    y
+    #Expected Output : [1 , 'simple' , 'list']
+    f.close()
+    """
+    pass
+
+#Handling Exceptions (VERY COOL !)
+def handling_exceptions():
+    """
+    It is possible to write programs that handle selected exceptions. Look at the following example which asks the user for input until a valid integer has been entered, but allows the user to interrupt the program (using Control-C) or whatever the OS supports); note that a user-generated interruption is signalled by raising the 'KeyboardInterrupt' exception.
+
+    Example and Run this function when you ready :
+    while True:
+        try:
+            x = int(input("Please enter a number : "))
+            break
+        except ValueError:
+            print("Oops ! That was no valid number. Try again . . .")
+
+    ------------------------------------------------------------
+    'TRY' STATEMENTS
+    ------------------------------------------------------------
+    \t- 'try clause' (the statement(s)) between the try and except keywords is executed.
+    \t - If no exception occurs, the except clause is skipped and execution of the try statement is finished.
+    \t - If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then if its matched, except clause is executed.
+    \t - If an exception occurs which does not match the exception named in the except clause, it is passed on to outer 'try' statements; if no handler is found, it is an unhandled exception and execution stops with a message as shown above.
+
+    A TRY Statement may have MORE than one except clause , example :
+    ... except(RuntimeError , TypeError , NameError)
+    ...     pass
+
+    NOTE :
+    The try ... except clause statement has an optional ELSE: clause
+    """
+    while True:
+        try:
+            int(input("Please enter a number"))
+            break
+        except ValueError:
+            print("Oops ! That was no valid number. Try again . . .")
+    return
+
+#Raising Exceptions
+#The rais statement allows the programmer to force a specified exception to occur . For Example
+
+#raise NameError('HiThere')
+
+#try:
+#    raise NameError('HiThere')
+#except NameError:
+#    print('An exception flew by !')
+#    raise
+
+
+
+#Defining Cleaning-up Actions
+#A finally clause
+def divide(x,y):
+    try:
+        result_num = x / y
+    except ZeroDivisionError:
+        print("division by zero !")
+    else:
+        print("result is ",result_num)
+    finally:
+        print("Executing finally clause")
 
 if __name__ == "__main__":
     import sys
