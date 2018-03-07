@@ -611,3 +611,8 @@ def modules():
 
 
 print(50 * "*" , "\nLOAD SUCCESSFUL\n" , 50 * "*")
+
+
+if __name__ == "__main__":
+    import sys
+    long_list(int(sys.argv[1]))
