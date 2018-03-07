@@ -1,6 +1,9 @@
 r"""
 Check File directory using terminal command -> ls
 
+Run Python NOTE :
+Use default terminal to run python code -> python filename.py
+
 FIRST NOTE :
 Use python terminal for beautiful list down the var and function -> print(*dir(import_filename) , sep='\n')
 
@@ -9,11 +12,8 @@ NOTE : Watch out for the line space and indent ! Because it will detect an error
 Self NOTE :
 Use this in your python terminal for coding style documentation -> print(coding_style.__doc__)
 
-Degression NOTE :
+DEGRESSION NOTE :
 Use this in your python terminal -> degression_link()
-
-Run Python NOTE :
-Use default terminal to run python code -> python filename.py
 
 Tuple NOTE :
 Use python terminal -> print(what_is_tuple.__doc__)
@@ -35,6 +35,12 @@ use python terminal -> print(reading_writing.__doc__)
 
 READ NOTE :
 use python terminal -> print(read.__doc__)
+
+JSON NOTE :
+use python terminal -> print(json.__doc__)
+
+HANDLING EXCEPTIONS NOTE :
+use python terminal -> print(handling_exceptions.__doc__)
 """
 # IF Statement
 
