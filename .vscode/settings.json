@@ -1,6 +1,6 @@
 {
     "python.linting.enabled": true,
-    "python.pythonPath": "C:\\Users\\Alienware\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
+    "python.pythonPath": "C:\\Python35-32\\python.exe",
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",
@@ -11,5 +11,8 @@
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.promptToConfigure": false,
     "python.unitTest.pyTestEnabled": false,
-    "python.unitTest.nosetestsEnabled": false
+    "python.unitTest.nosetestsEnabled": false,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pep8Enabled": false
 }
