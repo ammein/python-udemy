@@ -89,3 +89,17 @@ def packages():
     """
     pass
 
+#Importing * from a package
+def package_all():
+    """
+    What happens when you try to import 'from sound.effects import *' ? 
+
+    The import statement uses the following convention: if a package's __init__.py code defines a list named __all__ , it is taken to be the list of module names that should be imported when 'from package import *' is encountered. It is up to the package author to keep this list up-to-date when a new version of the package is released. Package authors may also decide not to support it, if they don't see a use for importing * from their package. For example , the file sound/effects/__init__.py could contain the following code :
+
+    __all__ = ["echo" , "surround" , "reverse"]
+
+    This would mean that 'from sound.effects import * would import the three named submodules of the sound package.
+    """
+    pass
+
+
