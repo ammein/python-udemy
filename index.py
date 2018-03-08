@@ -392,8 +392,7 @@ def matrix():
         [5,6,7,8],
         [9,10,11,12]
     ]
-    matrix_expand = [[row[i] for row in matrix] for i in range(4)]
-    return {print("Normal Matrix = " , matrix),print("Expand Matrix = " , matrix_expand),print(lala)}
+    return {print("Normal Matrix = " , matrix),print("Expand Matrix = " , [[row[i] for row in matrix] for i in range(4)]),print(lala)}
 
 #In the real world , you should prefer built-in functions to complex flow statements. The zip() function would do a great job for this use case :'
 def real_world():
@@ -917,7 +916,8 @@ def divide(x,y):
         print("result is ",result_num)
     finally:
         print("Executing finally clause")
-
+"""
 if __name__ == "__main__":
     import sys
     long_list(int(sys.argv[1]))
+"""
