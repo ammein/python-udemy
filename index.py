@@ -86,12 +86,12 @@ for k , v in enumerate(fruit_collection):
 
 range(4)
 
-list(range(4))
+list(range(4))  #Expected Output : [0, 1, 2, 3]
 
 for f in fruit_collection:
     if f == "durian":
         print("Found the smelly fruit !!! -->",f)
-        break
+        break #break -> Stops at durian . If you change to continue , it will run until the end
     else:
         print("Love this fruit" , f)
 
@@ -335,7 +335,7 @@ for n in range(0,10):
     cubes.append(n*n*n)
 
 #METHOD 2
-#map = 
+#map =
 cubes = list(map(lambda x: x*x*x, range(10)))
 
 #METHOD 3
@@ -655,7 +655,7 @@ x = 10 * 3.25
 y = 200 * 200
 s = 'The value of x is ' + repr(x) + ', and y is ' + repr(y) +'. . .'
 
-print(s) #Just like .innerHTML ! 
+print(s) #Just like .innerHTML !
 #Expected Output : The value of x is 32.5, and y is 40000. . .
 
 #The repr() of a string adds string quotes and backslashes
@@ -690,7 +690,7 @@ for x in range(1,11):
     print(x,x*x,end=' ')
     #note the use of 'end' on previous line to make a NEW LINE (\n)
     print(x*x*x)
-    
+
 def nice_output():
     """
     Using repr() and .rjust()
