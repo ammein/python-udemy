@@ -1,7 +1,12 @@
 {
     "python.linting.enabled": true,
+<<<<<<< HEAD
     "python.pythonPath": "C:\\Users\\scorp\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
     "python.testing.unittestArgs": [
+=======
+    "python.pythonPath": "C:\\Python35-32\\python.exe",
+    "python.unitTest.unittestArgs": [
+>>>>>>> 2837fff844617ebc8a1885029d00ea53c83f040c
         "-v",
         "-s",
         ".",
